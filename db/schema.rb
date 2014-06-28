@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 20140628011113) do
 
   create_table "clients", force: true do |t|
     t.integer  "user_id"
-    t.string   "name",          null: false
+    t.string   "first_name",    null: false
+    t.string   "last_name",     null: false
     t.string   "phone",         null: false
     t.string   "salesforce_id", null: false
     t.string   "email"
@@ -27,9 +28,10 @@ ActiveRecord::Schema.define(version: 20140628011113) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "name"
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
