@@ -10,6 +10,12 @@
   <% end %>
 </div>
 
-<% @clients.each do |client| %>
+<div id = "new-client-errors">
+  <%= flash[:errors] %>
+</div>
 
+<div id="client-list">
+<% @clients.each do |client| %>
+  <%= render partial: 'shared/client_list_item', locals: {client: client} %>
 <% end %>
+</div>

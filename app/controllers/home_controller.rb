@@ -8,5 +8,6 @@ class HomeController < ApplicationController
   def dashboard
     @user = current_user
     @client = Client.new
+    @clients = @user.clients
   end
 end
