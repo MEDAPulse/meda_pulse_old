@@ -6,6 +6,7 @@ class ClientsController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:errors] = @client.errors.full_messages
+      redirect_to dashboard_path
     end
   end
 
