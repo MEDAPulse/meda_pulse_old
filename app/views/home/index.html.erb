@@ -6,8 +6,8 @@
     <%= submit_tag "Login" %>
   <% end %>
 </div>
-<% if flash[:notice] %>
+<% if flash[:error] %>
   <div id="errors">
-    <p><%= flash[:notice] %></p>
+    <p><%= flash[:error] %></p>
   </div>
 <% end %>

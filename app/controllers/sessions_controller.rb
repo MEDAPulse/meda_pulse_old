@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
 
       redirect_to dashboard_path
     else
-      flash[:notice] = "Invalid email and/or password"
-      redirect_to :root #flash error messages?
+      flash[:error] = "Invalid email and/or password"
+      redirect_to :root
     end
   end
 
