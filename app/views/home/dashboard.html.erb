@@ -1,1 +1,15 @@
-Dashboard Page
+<div id="add-new-client">
+  <%= link_to 'Add New Client','#', id: 'show-client-form' %>
+  <%= form_for @client, html:{class: "hidden"} do |f| %>
+    <%= f.text_field :first_name, placeholder: 'First Name'%>
+    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    <%= f.text_field :salesforce_id, placeholder: 'SalesForce ID' %>
+    <%= f.text_field :phone, placeholder: 'Phone Number' %>
+    <%= f.email_field :email, placeholder: 'Email' %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<% @clients.each do |client| %>
+
+<% end %>

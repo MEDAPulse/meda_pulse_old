@@ -6,5 +6,7 @@ class HomeController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
+    @client = Client.new
   end
 end
