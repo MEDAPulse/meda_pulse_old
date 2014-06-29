@@ -1,6 +1,9 @@
-$(document).ready(function(){
+$(document).ready(initialize)
+$(document).on('page:change', initialize)
+
+function initialize() {
   setListeners()
-})
+}
 
 function setListeners(){
   $('body').on('click', '#show-client-form', toggleAddClientForm)
@@ -95,7 +98,7 @@ function changeShowGoalsLinkToHideGoals(showGoalsLinkElement) {
   if (showGoalsLinkElement) {
     showGoalsLinkElement.classList.remove('show-goals')
     showGoalsLinkElement.classList.add('hide-goals')
-    showGoalsLinkElement.innerText = 'Hide Goals'
+    showGoalsLinkElement.innerText = 'Hide All'
   }
 }
 
@@ -111,8 +114,6 @@ function hideGoalsLink(e){
   var actionPlanDiv = document.getElementById('action-plan-'+actionPlanId)
   hideGoalsAndSteps(actionPlanDiv)
 }
-
-
 
 function hideGoalsAndSteps(actionPlanDiv){
   var hideGoalsLinkElement = actionPlanDiv.querySelector('.hide-goals')
