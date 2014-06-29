@@ -1,0 +1,9 @@
+<div class="goal-description">
+  <%= goal.description %>
+</div>
+
+<div class="goal-steps">
+  <% goal.steps.each do |step| %>
+    <%= render partial: "shared/step", locals: {step: step} %>
+  <% end %>
+</div>
