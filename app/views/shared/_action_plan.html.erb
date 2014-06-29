@@ -1,9 +1,11 @@
-<div class="action-plan-description">
-  <%= action_plan.description %>
-</div>
+<div class="action-plan" id="action-plan-<%= action_plan.id %>">
+  <div class="action-plan-description">
+    <%= action_plan.description %>-<%= link_to "Show Goals", "#", class:"show-goals", data: {action_plan_id: action_plan.id }%> - <%= link_to "Show Goals + Steps", "#", class:"show-goals-steps", data: {action_plan_id: action_plan.id }%>
+  </div>
 
-<div class="action-plan-goals">
-  <% action_plan.goals.each do |goal| %>
-    <%= render partial: 'shared/goal', locals: {goal: goal} %>
-  <% end %>
+  <div class="action-plan-goals hidden">
+    <% action_plan.goals.each do |goal| %>
+      <%= render partial: 'shared/goal', locals: {goal: goal} %>
+    <% end %>
+  </div>
 </div>

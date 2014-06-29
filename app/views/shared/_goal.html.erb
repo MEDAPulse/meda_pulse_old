@@ -1,9 +1,11 @@
-<div class="goal-description">
-  <%= goal.description %>
-</div>
+<div class="goal" id="goal-<%= goal.id %>">
+  <div class="goal-description">
+    <%= goal.description %> - <%= link_to "Show Steps", "#", class:"show-steps", data: {goal_id: goal.id }%>
+  </div>
 
-<div class="goal-steps">
-  <% goal.steps.each do |step| %>
-    <%= render partial: "shared/step", locals: {step: step} %>
-  <% end %>
+  <div class="goal-steps hidden">
+    <% goal.steps.each do |step| %>
+      <%= render partial: "shared/step", locals: {step: step} %>
+    <% end %>
+  </div>
 </div>
