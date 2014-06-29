@@ -1,6 +1,13 @@
-<div class="client-details">
+<div id="client-details">
   <h2><%= "#{@client.first_name} #{@client.last_name}" %></h2>
   <h3>Phone: <%= @client.phone %></h3>
   <h3>Email: <%= @client.email %></h3>
   <h3>Salesforce ID: <%= @client.salesforce_id %>
+</div>
+
+<div id="action-plans">
+  <h2>Action Plans</h2>
+  <% @client.action_plans.each do |action_plan| %>
+    <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan} %>
+  <% end %>
 </div>
