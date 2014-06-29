@@ -1,0 +1,9 @@
+<div class="action-plan-description">
+  <%= action_plan.description %>
+</div>
+
+<div class="action-plan-goals">
+  <% action_plan.goals.each do |goal| %>
+    <%= render partial: 'shared/goal', locals: {goal: goal} %>
+  <% end %>
+</div>
