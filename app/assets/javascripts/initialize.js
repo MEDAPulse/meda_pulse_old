@@ -103,9 +103,11 @@ function changeShowGoalsLinkToHideGoals(showGoalsLinkElement) {
 }
 
 function changeHideGoalsLinkToShowGoals(hideGoalsLinkElement) {
-  hideGoalsLinkElement.classList.add('show-goals')
-  hideGoalsLinkElement.classList.remove('hide-goals')
-  hideGoalsLinkElement.innerText = 'Show Goals'
+  if(hideGoalsLinkElement){
+    hideGoalsLinkElement.classList.add('show-goals')
+    hideGoalsLinkElement.classList.remove('hide-goals')
+    hideGoalsLinkElement.innerText = 'Show Goals'
+  }
 }
 
 function hideGoalsLink(e){
