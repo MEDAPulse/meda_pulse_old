@@ -12,6 +12,7 @@ function setListeners(){
   $('body').on('click', '.show-goals-steps', showGoalsAndStepsLink)
   $('body').on('click', '.hide-steps', hideStepsLink)
   $('body').on('click', '.hide-goals', hideGoalsLink)
+  $('body').on('click', '#add-goal', toggleGoalForm)
 }
 
 function toggleAddClientForm(e){
@@ -127,4 +128,12 @@ function hideGoalsAndSteps(actionPlanDiv){
   for(var i=0; i<numberOfGoals; i++){
     hideSteps(goalDivs[i])
   }
+}
+
+function toggleGoalForm(e){
+  e.preventDefault()
+  var actionPlanId = this.dataset.actionPlanId
+  var actionPlanDiv = document.getElementById('action-plan-'+actionPlanId)
+  var goalFormElement = actionPlanDiv.querySelector('#new_goal')
+  goalFormElement.classList.toggle('hidden')
 }

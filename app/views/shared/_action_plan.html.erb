@@ -9,9 +9,9 @@
         <%= render partial: 'shared/goal', locals: {goal: goal} %>
       <% end %>
     </div>
-    <%= link_to "Add Goal", "#", class: "add-goal", data: {action_plan_id: action_plan.id } %>
-    <%= form_for @goal do |f| %>
-      <%= f.text_field :description, placeholder: "Description", class:"" %>
+    <%= link_to "Add Goal", "#", id: "add-goal", data: {action_plan_id: action_plan.id } %>
+    <%= form_for @goal, html: {class:"hidden"}  do |f| %>
+      <%= f.text_field :description, placeholder: "Description"%>
       <%= f.hidden_field :action_plan_id, value: action_plan.id %>
       <%= f.submit "Add Goal" %>
     <% end %>
