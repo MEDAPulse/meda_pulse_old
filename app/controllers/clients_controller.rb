@@ -16,6 +16,7 @@ class ClientsController < ApplicationController
   def show
     @client = Client.includes(action_plans: {goals: :steps}).find(params[:id])
     @user = current_user
+    @goal = Goal.new
   end
 
   def update

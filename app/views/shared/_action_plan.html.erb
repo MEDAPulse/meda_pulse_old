@@ -4,8 +4,16 @@
   </div>
 
   <div class="action-plan-goals hidden">
-    <% action_plan.goals.each do |goal| %>
-      <%= render partial: 'shared/goal', locals: {goal: goal} %>
+    <div class="goals">
+      <% action_plan.goals.each do |goal| %>
+        <%= render partial: 'shared/goal', locals: {goal: goal} %>
+      <% end %>
+    </div>
+    <%= link_to "Add Goal", "#", class: "add-goal", data: {action_plan_id: action_plan.id } %>
+    <%= form_for @goal do |f| %>
+      <%= f.text_field :description, placeholder: "Description", class:"" %>
+      <%= f.hidden_field :action_plan_id, value: action_plan.id %>
+      <%= f.submit "Add Goal" %>
     <% end %>
   </div>
 </div>
