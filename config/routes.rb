@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy]
   resources :clients, only: [:create, :destroy, :show, :update]
   resources :goals, only: [:create, :destroy, :update]
+  resources :action_plans, only: [:create, :destroy, :update]
 end

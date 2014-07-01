@@ -8,6 +8,12 @@
 <div id="action-plans">
   <h2>Action Plans</h2>
   <% @client.action_plans.each do |action_plan| %>
-    <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan} %>
+    <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal} %>
   <% end %>
 </div>
+
+<%= form_for @action_plan, remote: true do |f| %>
+  <%= f.text_field :description, placeholder: 'Description' %>
+  <%= f.hidden_field :client_id, value: @client.id %>
+  <%= f.submit "Add Action Plan" %>
+<% end %>

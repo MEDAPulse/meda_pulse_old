@@ -1,5 +1,6 @@
 function setActionPlanAjaxListeners() {
   $('body').on('ajax:success', '#new_goal', appendGoal)
+  $('body').on('ajax:success', '#new_action_plan', appendActionPlan)
 }
 
 function appendGoal(e, response) {
@@ -22,4 +23,11 @@ function hideGoalForm(actionPlanDiv) {
 
 function clearGoalForm(actionPlanDiv) {
   actionPlanDiv.querySelector('#goal_description').value = ""
+}
+
+function appendActionPlan(e, actionPlanHTML) {
+  newActionPlanDiv = $.parseHTML(actionPlanHTML)[0]
+  actionPlansDiv = document.getElementById('action-plans')
+  actionPlansDiv.appendChild(newActionPlanDiv)
+  showGoals(newActionPlanDiv)
 }
