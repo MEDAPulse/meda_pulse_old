@@ -30,4 +30,5 @@ function appendActionPlan(e, actionPlanHTML) {
   actionPlansDiv = document.getElementById('action-plans')
   actionPlansDiv.appendChild(newActionPlanDiv)
   showGoals(newActionPlanDiv)
+  $('#action_plan_description')[0].value = ""
 }
