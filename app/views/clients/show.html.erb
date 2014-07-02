@@ -12,7 +12,9 @@
   <% end %>
 </div>
 
-<%= form_for @action_plan, remote: true do |f| %>
+<%= link_to "Add Action Plan", "#", id: "add-action-plan" %>
+
+<%= form_for @action_plan, remote: true, html: {class: 'hidden'} do |f| %>
   <%= f.text_field :description, placeholder: 'Description' %>
   <%= f.hidden_field :client_id, value: @client.id %>
   <%= f.submit "Add Action Plan" %>
