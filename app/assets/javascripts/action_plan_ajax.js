@@ -25,6 +25,10 @@ function hideGoalForm(actionPlanDiv) {
   actionPlanDiv.querySelector('#new_goal').classList.add('hidden')
 }
 
+function hideStepForm(goalDiv) {
+  goalDiv.querySelector('#new_step').classList.add('hidden')
+}
+
 function hideActionPlanForm() {
   var actionPlanForm = $('#new_action_plan')[0]
   actionPlanForm.classList.add('hidden')
@@ -56,9 +60,10 @@ function removeGoal(e, response){
 function appendStep(e, response){
   goalDiv = $('#goal-'+response.goal_id)[0]
   newStepDiv = $.parseHTML(response.html)[0]
-  goalDiv.querySelector('.goal-steps').appendChild(newStepDiv)
+  goalDiv.querySelector('.steps').appendChild(newStepDiv)
   goalDiv.querySelector('#step_description').value = ""
   goalDiv.querySelector('#step_due_by').value = ""
+  hideStepForm(goalDiv)
 }
 
 function removeStep(e, response){

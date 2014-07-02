@@ -7,6 +7,7 @@ function setActionPlanDisplayLogicListeners(){
   $('body').on('click', '.hide-goals', hideGoalsLink)
   $('body').on('click', '#add-goal', toggleGoalForm)
   $('body').on('click', '#add-action-plan', toggleActionPlanForm)
+  $('body').on('click', '.add-step', toggleStepForm)
 }
 
 function toggleAddClientForm(e){
@@ -136,4 +137,11 @@ function toggleActionPlanForm(e) {
   e.preventDefault()
   var actionPlanForm = $('#new_action_plan')[0]
   actionPlanForm.classList.toggle('hidden')
+}
+
+function toggleStepForm(e) {
+  e.preventDefault()
+  var goalId = this.dataset.goalId
+  var goalDiv = document.getElementById('goal-'+goalId)
+  goalDiv.querySelector('#new_step').classList.toggle('hidden')
 }

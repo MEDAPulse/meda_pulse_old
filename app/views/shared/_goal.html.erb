@@ -4,14 +4,17 @@
   </div>
 
   <div class="goal-steps hidden">
-    <% goal.steps.each do |step| %>
-      <%= render partial: "shared/step", locals: {step: step} %>
-    <% end %>
-  </div>
-  <%= form_for new_step, remote: true do |f| %>
+    <div class="steps">
+      <% goal.steps.each do |step| %>
+        <%= render partial: "shared/step", locals: {step: step} %>
+      <% end %>
+    </div>
+  <%= link_to "Add Step", "#", class: "add-step", data: {goal_id: goal.id } %>
+  <%= form_for new_step, remote: true, html: {class: 'hidden'} do |f| %>
     <%= f.hidden_field :goal_id, value: goal.id %>
     <%= f.text_field :description, placeholder: "Description" %>
     <%= f.date_field :due_by %>
     <%= f.submit "Add Step" %>
   <% end %>
+  </div>
 </div>
