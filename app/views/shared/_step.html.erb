@@ -2,4 +2,5 @@
   <p><%= step.description %></p>
   <p>Due By: <%= step.due_by %></p>
   <p>Complete: <%= step.complete %></p>
+  <%= link_to "Delete Step", step, method: :delete, remote: true, class: "delete-step" %>
 </div>

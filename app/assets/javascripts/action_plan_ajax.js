@@ -4,6 +4,7 @@ function setActionPlanAjaxListeners() {
   $('body').on('ajax:success', '.delete-action-plan', removeActionPlan)
   $('body').on('ajax:success', '.delete-goal', removeGoal)
   $('body').on('ajax:success', '#new_step', appendStep)
+  $('body').on('ajax:success', '.delete-step', removeStep)
 }
 
 function appendGoal(e, response) {
@@ -58,4 +59,9 @@ function appendStep(e, response){
   goalDiv.querySelector('.goal-steps').appendChild(newStepDiv)
   goalDiv.querySelector('#step_description').value = ""
   goalDiv.querySelector('#step_due_by').value = ""
+}
+
+function removeStep(e, response){
+  stepDiv = $('#step-'+response.step_id)[0]
+  stepDiv.remove()
 }

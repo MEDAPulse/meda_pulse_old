@@ -7,11 +7,17 @@ class StepsController < ApplicationController
 
       render json: {html: html, goal_id: goal_id}
     else
-
+      #send error messages
     end
   end
 
   def destroy
+    @step = Step.find(params[:id])
+    if @step && @step.destroy
+      render json: {step_id: @step.id}
+    else
+      #send error messages
+    end
   end
 
   def update
