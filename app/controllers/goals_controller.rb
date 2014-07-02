@@ -2,7 +2,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     if @goal && @goal.save
-      html = render_to_string(partial: 'shared/goal', locals: {goal: @goal})
+      html = render_to_string(partial: 'shared/goal', locals: {goal: @goal, new_step: Step.new})
       action_plan_id = @goal.action_plan.id
 
       render json: {html: html, action_plan_id: action_plan_id}

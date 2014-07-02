@@ -8,4 +8,10 @@
       <%= render partial: "shared/step", locals: {step: step} %>
     <% end %>
   </div>
+  <%= form_for new_step, remote: true do |f| %>
+    <%= f.hidden_field :goal_id, value: goal.id %>
+    <%= f.text_field :description, placeholder: "Description" %>
+    <%= f.date_field :due_by %>
+    <%= f.submit "Add Step" %>
+  <% end %>
 </div>

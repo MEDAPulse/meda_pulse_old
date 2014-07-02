@@ -18,6 +18,7 @@ class ClientsController < ApplicationController
     @user = current_user
     @goal = Goal.new
     @action_plan = ActionPlan.new
+    @step = Step.new
   end
 
   def update

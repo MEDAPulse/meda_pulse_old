@@ -8,7 +8,7 @@
 <div id="action-plans">
   <h2>Action Plans</h2>
   <% @client.action_plans.each do |action_plan| %>
-    <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal} %>
+    <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal, new_step: @step} %>
   <% end %>
 </div>
 
