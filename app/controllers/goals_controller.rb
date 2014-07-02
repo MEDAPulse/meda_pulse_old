@@ -12,6 +12,12 @@ class GoalsController < ApplicationController
   end
 
   def destroy
+    @goal = Goal.find(params[:id])
+    if @goal && @goal.destroy
+      render json: {goal_id: @goal.id}
+    else
+      #send error messages
+    end
   end
 
   def update

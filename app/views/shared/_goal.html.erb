@@ -1,6 +1,6 @@
 <div class="goal" id="goal-<%= goal.id %>">
   <div class="goal-description">
-    <%= goal.description %> - <%= link_to "Show Steps", "#", class:"show-steps", data: {goal_id: goal.id }%>
+    <%= goal.description %> - <%= link_to "Show Steps", "#", class:"show-steps", data: {goal_id: goal.id }%> - <%= link_to "Delete", goal, remote: true, method: :delete, class: "delete-goal" %>
   </div>
 
   <div class="goal-steps hidden">

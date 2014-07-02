@@ -1,6 +1,8 @@
 function setActionPlanAjaxListeners() {
   $('body').on('ajax:success', '#new_goal', appendGoal)
   $('body').on('ajax:success', '#new_action_plan', appendActionPlan)
+  $('body').on('ajax:success', '.delete-action-plan', removeActionPlan)
+  $('body').on('ajax:success', '.delete-goal', removeGoal)
 }
 
 function appendGoal(e, response) {
@@ -31,4 +33,14 @@ function appendActionPlan(e, actionPlanHTML) {
   actionPlansDiv.appendChild(newActionPlanDiv)
   showGoals(newActionPlanDiv)
   $('#action_plan_description')[0].value = ""
+}
+
+function removeActionPlan(e, response){
+  actionPlanDiv = $('#action-plan-'+response.action_plan_id)[0]
+  actionPlanDiv.remove()
+}
+
+function removeGoal(e, response){
+  goalDiv = $('#goal-'+response.goal_id)[0]
+  goalDiv.remove()
 }
