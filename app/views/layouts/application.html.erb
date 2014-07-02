@@ -7,10 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="container">
+
 <% if logged_in? %>
   <%= link_to "Logout", session_path, method: "DELETE" %><br>
 <% end %>
+
 <%= yield %>
+
+</div>
 
 </body>
 </html>
