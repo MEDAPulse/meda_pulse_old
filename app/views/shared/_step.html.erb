@@ -1,6 +1,6 @@
-<div class="step" id="step-<%= step.id %>">
-  <p><%= step.description %></p>
-  <p>Due By: <%= step.due_by %></p>
-  <p>Complete: <%= step.complete %></p>
-  <%= link_to "Delete Step", step, method: :delete, remote: true, class: "delete-step" %>
+<div class="step pure-g" id="step-<%= step.id %>">
+  <div class="pure-u-1-4"><%= step.description %></div>
+  <div class="pure-u-1-4">Due By: <%= step.due_by %></div>
+  <div class="pure-u-1-4">Complete: <%= step.complete %></div>
+  <%= link_to "Delete Step", step, method: :delete, remote: true, class: "delete-step pure-u-1-4" %>
 </div>

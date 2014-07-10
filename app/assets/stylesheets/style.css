@@ -13,7 +13,6 @@ a:hover {
 }
 
 .goal {
-  border: 1px solid orange;
 }
 
 .goal-description {
@@ -22,7 +21,6 @@ a:hover {
 
 .step {
   color: blue;
-  border: 1px dotted purple;
 }
 
 .container {
@@ -30,6 +28,10 @@ a:hover {
   margin: auto;
 }
 
-.action-plan {
-  border: 1px solid blue;
+.action-plan-goals {
+  margin-left: 3%;
+}
+
+.goal-steps {
+  margin-left: 3%;
 }
