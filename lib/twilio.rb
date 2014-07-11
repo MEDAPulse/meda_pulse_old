@@ -3,12 +3,13 @@ module Twilio
   ACCT_SID = ENV['TWILIO_ACCT_SID']
   AUTH_TOKEN = ENV['TWILIO_AUTH_TOKEN']
   FROM_NUM = ENV['TWILIO_NUMBER']
+  TO_NUM = ENV['TO_NUMBER_FOR_DEV']
 
   def send_message(number, message)
     begin
       client = Twilio::REST::Client.new(ACCT_SID, AUTH_TOKEN)
       message_details = {
-        to: number,
+        to: TO_NUM, #change for prod
         from: FROM_NUM,
         body: message
       }
