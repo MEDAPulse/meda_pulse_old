@@ -1,6 +1,7 @@
 class Client < ActiveRecord::Base
   belongs_to :user
   has_many :action_plans
+  has_many :text_messages
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone, presence: true
