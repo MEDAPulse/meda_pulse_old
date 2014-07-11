@@ -19,6 +19,7 @@ class ClientsController < ApplicationController
     @goal = Goal.new
     @action_plan = ActionPlan.new
     @step = Step.new
+    @text_message = TextMessage.new
   end
 
   def update
