@@ -35,3 +35,35 @@ a:hover {
 .goal-steps {
   margin-left: 3%;
 }
+
+#new-text-message {
+  text-align: center;
+}
+
+#new-text-message textarea {
+  width: 100%;
+}
+
+#new-message-length-submit {
+  text-align: left;
+}
+
+#message-length {
+  display: inline-block;
+  padding: 10px;
+}
+
+#text-length {
+  font-weight: bold;
+}
+
+#new-text-message-submit-button {
+  margin: 0;
+  float: right;
+}
+
+#text-form {
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+}

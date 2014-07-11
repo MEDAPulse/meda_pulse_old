@@ -7,4 +7,5 @@ function initialize() {
 function setListeners() {
   setActionPlanDisplayLogicListeners()
   setActionPlanAjaxListeners()
+  setTextMessageDisplayLogicListeners()
 }
