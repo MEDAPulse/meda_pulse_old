@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :goals, only: [:create, :destroy, :update]
   resources :action_plans, only: [:create, :destroy, :update]
   resources :steps, only: [:create, :destroy, :update]
+  resources :text_messages, only: [:create]
 end
