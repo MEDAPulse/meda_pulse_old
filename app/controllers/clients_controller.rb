@@ -21,6 +21,7 @@ class ClientsController < ApplicationController
     @step = Step.new
     @text_message = TextMessage.new
     @text_messages = @client.text_messages.order(created_at: :desc)
+    @formatted_phone_number = format_phone_number(@client.phone)
   end
 
   def update
@@ -31,4 +32,13 @@ class ClientsController < ApplicationController
   def client_params
     params.require(:client).permit(:first_name, :last_name, :salesforce_id, :phone, :email)
   end
+
+  def format_phone_number(phone_num)
+    area_code = phone_num[2..4]
+    phone_num_section_1 = phone_num[5..7]
+    phone_num_section_2 = phone_num[8..11]
+
+    "(#{area_code}) #{phone_num_section_1}-#{phone_num_section_2}"
+  end
+
 end
