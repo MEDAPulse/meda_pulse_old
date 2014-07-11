@@ -20,6 +20,7 @@ class ClientsController < ApplicationController
     @action_plan = ActionPlan.new
     @step = Step.new
     @text_message = TextMessage.new
+    @text_messages = @client.text_messages.order(created_at: :desc)
   end
 
   def update

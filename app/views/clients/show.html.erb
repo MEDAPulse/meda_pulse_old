@@ -38,3 +38,8 @@
   <%= f.hidden_field :client_id, value: @client.id %>
   <%= f.submit "Add Action Plan" %>
 <% end %>
+
+<h2>Text Message History</h2>
+<% @text_messages.each do |text_message| %>
+  <%= render partial: 'shared/text_message', locals: {text_message: text_message} %>
+<% end %>
