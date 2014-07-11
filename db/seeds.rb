@@ -7,7 +7,7 @@ def create_client
   client = Client.create(
                 first_name: Faker::Name.first_name,
                 last_name: Faker::Name.last_name,
-                phone: Faker::PhoneNumber.phone_number,
+                phone: "+1"+rand.to_s[2..11],
                 salesforce_id: Faker::Company.duns_number,
                 email: Faker::Internet.email,
                 user: User.last
