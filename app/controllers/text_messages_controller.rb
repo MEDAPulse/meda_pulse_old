@@ -1,4 +1,6 @@
 class TextMessagesController < ApplicationController
+  protect_from_forgery except: :incoming
+
   def create
     @client = Client.find(params[:text_message][:client_id])
     content = params[:text_message][:content]
