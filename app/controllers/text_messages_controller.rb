@@ -18,6 +18,31 @@ class TextMessagesController < ApplicationController
 
   end
 
+
+  def incoming
+    account_sid = params[:AccountSid]
+
+    if account_sid == ENV['TWILIO_ACCT_SID']
+      incoming_message = params[:Body]
+      incoming_number = params[:From]
+    else
+      return nil
+    end
+
+    client = Client.find_by_phone(incoming_number)
+
+    if client
+      text_message = TextMessage.new(content: incoming_message, client: client, incoming_message: true)
+    end
+
+    if text_message && text_message.save
+      head :ok
+    else
+      return nil
+    end
+
+  end
+
   private
 
   def text_message_params
