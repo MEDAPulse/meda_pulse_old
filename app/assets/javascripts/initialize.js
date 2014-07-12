@@ -1,4 +1,5 @@
-$(document).on('page:change', initialize)
+$(document).ready(initialize)
+
 
 function initialize() {
   setListeners()
