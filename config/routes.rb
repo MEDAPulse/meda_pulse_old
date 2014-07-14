@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :steps, only: [:create, :destroy, :update]
   resources :text_messages, only: [:create]
   post 'text_messages/incoming', to: 'text_messages#incoming', as: 'incoming_text'
+  get 'clients/:client_id/steps', to: 'clients#steps'
 end

@@ -27,6 +27,14 @@ class ClientsController < ApplicationController
   def update
   end
 
+  def steps
+    client = Client.find(params[:client_id])
+    action_plans = client.action_plans
+    goals = action_plans.map {|action_plan| action_plan.goals}.flatten
+    steps = goals.map {|goal| goal.steps }.flatten
+    render json: steps
+  end
+
   private
 
   def client_params
