@@ -40,6 +40,24 @@ StepController.prototype = {
   createStepsModels: function(stepJSONs) {
     var stepObjects = stepFactory(stepJSONs)
     this.model.steps = stepObjects
-  }
+    this.updateAllStepsCompleteStatus()
+  },
+
+  updateAllStepsCompleteStatus: function() {
+    var stepObjects = this.model.steps
+    var numSteps = stepObjects.length
+    for (var i=0; i<numSteps; i++) {
+      var stepObj = stepObjects[i]
+      this.updateStepCompleteStatus(stepObj)
+    }
+  },
+
+  updateStepCompleteStatus: function(stepObj) {
+    if (stepObj.complete) {
+      this.view.markStepAsComplete(stepObj.id)
+    } else {
+      this.view.markStepAsNotComplete(stepObj.id)
+    }
+  },
 
 }
