@@ -19,13 +19,29 @@ StepController.prototype = {
   setStepToComplete: function(e) {
     e.preventDefault()
     var stepId = e.target.dataset.stepId
-    this.view.markStepAsComplete(stepId)
+    var ajaxRequest = $.ajax({
+      url: '/steps/mark_complete/'+stepId,
+      type: 'PUT'
+    })
+    ajaxRequest.done(this.updateStepCompleteStatus.bind(this))
+  },
+
+  updateStepCompleteStatus: function(response) {
+    var stepId = response.step_id
+    var stepComplete = response.step_complete
+    var step = this.model.getStep(stepId)
+    step.complete = stepComplete
+    this.updateAllStepsCompleteStatusView()
   },
 
   setStepToNotComplete: function(e) {
     e.preventDefault()
     var stepId = e.target.dataset.stepId
-    this.view.markStepAsNotComplete(stepId)
+    var ajaxRequest = $.ajax({
+      url: '/steps/mark_not_complete/'+stepId,
+      type: 'PUT'
+    })
+    ajaxRequest.done(this.updateStepCompleteStatus.bind(this))
   },
 
   getSteps: function(clientId) {
@@ -40,19 +56,19 @@ StepController.prototype = {
   createStepsModels: function(stepJSONs) {
     var stepObjects = stepFactory(stepJSONs)
     this.model.steps = stepObjects
-    this.updateAllStepsCompleteStatus()
+    this.updateAllStepsCompleteStatusView()
   },
 
-  updateAllStepsCompleteStatus: function() {
+  updateAllStepsCompleteStatusView: function() {
     var stepObjects = this.model.steps
     var numSteps = stepObjects.length
     for (var i=0; i<numSteps; i++) {
       var stepObj = stepObjects[i]
-      this.updateStepCompleteStatus(stepObj)
+      this.updateStepCompleteStatusView(stepObj)
     }
   },
 
-  updateStepCompleteStatus: function(stepObj) {
+  updateStepCompleteStatusView: function(stepObj) {
     if (stepObj.complete) {
       this.view.markStepAsComplete(stepObj.id)
     } else {

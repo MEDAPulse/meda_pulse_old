@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :text_messages, only: [:create]
   post 'text_messages/incoming', to: 'text_messages#incoming', as: 'incoming_text'
   get 'clients/:client_id/steps', to: 'clients#steps'
+  put 'steps/mark_complete/:step_id', to: 'steps#mark_complete'
+  put 'steps/mark_not_complete/:step_id', to: 'steps#mark_not_complete'
 end

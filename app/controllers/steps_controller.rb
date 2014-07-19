@@ -23,6 +23,22 @@ class StepsController < ApplicationController
   def update
   end
 
+  def mark_complete
+    @step = Step.find(params[:step_id])
+    @step.complete = true
+    if @step.save
+      render json: {step_id: @step.id, step_complete: @step.complete}
+    end
+  end
+
+  def mark_not_complete
+    @step = Step.find(params[:step_id])
+    @step.complete = false
+    if @step.save
+      render json: {step_id: @step.id, step_complete: @step.complete}
+    end
+  end
+
   private
 
   def step_params
