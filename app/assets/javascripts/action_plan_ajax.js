@@ -67,6 +67,7 @@ function appendStep(e, response){
 }
 
 function removeStep(e, response){
+  stepController.model.deleteStep(response.step_id)
   stepDiv = $('#step-'+response.step_id)[0]
   stepDiv.remove()
 }
