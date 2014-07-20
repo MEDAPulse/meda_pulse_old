@@ -49,15 +49,18 @@ function appendActionPlan(e, actionPlanHTML) {
 
 function removeActionPlan(e, response){
   actionPlanDiv = $('#action-plan-'+response.action_plan_id)[0]
+  stepController.model.deleteSteps(response.step_ids)
   actionPlanDiv.remove()
 }
 
 function removeGoal(e, response){
+  stepController.model.deleteSteps(response.step_ids)
   goalDiv = $('#goal-'+response.goal_id)[0]
   goalDiv.remove()
 }
 
 function appendStep(e, response){
+  stepController.createStep(response.step)
   goalDiv = $('#goal-'+response.goal_id)[0]
   newStepDiv = $.parseHTML(response.html)[0]
   goalDiv.querySelector('.steps').appendChild(newStepDiv)
@@ -67,6 +70,7 @@ function appendStep(e, response){
 }
 
 function removeStep(e, response){
+  stepController.model.deleteStep(response.step_id)
   stepDiv = $('#step-'+response.step_id)[0]
   stepDiv.remove()
 }

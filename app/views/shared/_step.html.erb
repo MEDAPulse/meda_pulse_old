@@ -1,6 +1,18 @@
 <div class="step pure-g" id="step-<%= step.id %>">
   <div class="pure-u-1-4"><%= step.description %></div>
   <div class="pure-u-1-4">Due By: <%= step.due_by %></div>
-  <div class="pure-u-1-4">Complete: <%= step.complete %></div>
+
+  <div class="step-complete-toggle pure-u-1-4" id = "step-complete-toggle-<%= step.id %>">
+    Complete:
+    <ul>
+      <li class="on">
+        <%= link_to "NO", "#", class: "step-complete-no", data: {step_id: step.id} %>
+      </li>
+      <li>
+        <%= link_to "YES", "#", class: "step-complete-yes", data: {step_id: step.id} %>
+      </li>
+    </ul>
+  </div>
+
   <%= link_to "Delete Step", step, method: :delete, remote: true, class: "delete-step pure-u-1-4" %>
 </div>

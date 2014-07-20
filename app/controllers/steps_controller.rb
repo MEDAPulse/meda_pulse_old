@@ -5,7 +5,7 @@ class StepsController < ApplicationController
       html = render_to_string(partial: 'shared/step', locals:{step: @step})
       goal_id = @step.goal.id
 
-      render json: {html: html, goal_id: goal_id}
+      render json: {html: html, goal_id: goal_id, step: @step.to_json}
     else
       #send error messages
     end
@@ -21,6 +21,22 @@ class StepsController < ApplicationController
   end
 
   def update
+  end
+
+  def mark_complete
+    @step = Step.find(params[:step_id])
+    @step.complete = true
+    if @step.save
+      render json: {step_id: @step.id, step_complete: @step.complete}
+    end
+  end
+
+  def mark_not_complete
+    @step = Step.find(params[:step_id])
+    @step.complete = false
+    if @step.save
+      render json: {step_id: @step.id, step_complete: @step.complete}
+    end
   end
 
   private
