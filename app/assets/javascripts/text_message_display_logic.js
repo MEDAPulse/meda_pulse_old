@@ -1,5 +1,5 @@
 function setTextMessageDisplayLogicListeners(){
-  $('body').on('keyup', '#text_message_content', updateTextMessageLength)
+  $('body').on('input', '#text_message_content', updateTextMessageLength)
 }
 
 function updateTextMessageLength(e) {
