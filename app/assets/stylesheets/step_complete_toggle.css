@@ -2,10 +2,13 @@
     list-style:none;
     width:85px;
     height:26px;
+    margin: 0;
+    padding: 0;
     /*position:absolute;*/
-    top:50%;
-    left:50%;
-    margin:-13px 0 0 -42px;
+    /*top:50%;*/
+    /*left:50%;*/
+    /*margin:-13px 0 0 -42px;*/
+    display: inline-block;
 }
 
 .step-complete-toggle ul li{
@@ -13,7 +16,6 @@
     line-height:23px;
     font-size:11px;
     padding:2px 10px 0;
-
     background: #E5E5E5;
     background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F3F3F3), to(#E5E5E5));
     text-shadow:0 1px 0 #FFF;
