@@ -5,10 +5,11 @@ function setActionPlanAjaxListeners() {
   $('body').on('ajax:success', '.delete-goal', removeGoal)
   $('body').on('ajax:success', '#new_step', appendStep)
   $('body').on('ajax:success', '.delete-step', removeStep)
+  $('body').on('ajax:success', '#new_text_message', appendTextMessage)
 }
 
 function appendGoal(e, response) {
-  actionPlanDiv = getActionPlanDiv(response.action_plan_id)
+  var actionPlanDiv = getActionPlanDiv(response.action_plan_id)
   goalsDiv = actionPlanDiv.querySelector('.goals')
   newGoalDiv = $.parseHTML(response.html)[0]
   goalsDiv.appendChild(newGoalDiv)
@@ -39,8 +40,8 @@ function clearGoalForm(actionPlanDiv) {
 }
 
 function appendActionPlan(e, actionPlanHTML) {
-  newActionPlanDiv = $.parseHTML(actionPlanHTML)[0]
-  actionPlansDiv = document.getElementById('action-plans')
+  var newActionPlanDiv = $.parseHTML(actionPlanHTML)[0]
+  var actionPlansDiv = document.getElementById('action-plans')
   actionPlansDiv.appendChild(newActionPlanDiv)
   showGoals(newActionPlanDiv)
   $('#action_plan_description')[0].value = ""
@@ -48,21 +49,21 @@ function appendActionPlan(e, actionPlanHTML) {
 }
 
 function removeActionPlan(e, response){
-  actionPlanDiv = $('#action-plan-'+response.action_plan_id)[0]
+  var actionPlanDiv = $('#action-plan-'+response.action_plan_id)[0]
   stepController.model.deleteSteps(response.step_ids)
   actionPlanDiv.remove()
 }
 
 function removeGoal(e, response){
   stepController.model.deleteSteps(response.step_ids)
-  goalDiv = $('#goal-'+response.goal_id)[0]
+  var goalDiv = $('#goal-'+response.goal_id)[0]
   goalDiv.remove()
 }
 
 function appendStep(e, response){
   stepController.createStep(response.step)
-  goalDiv = $('#goal-'+response.goal_id)[0]
-  newStepDiv = $.parseHTML(response.html)[0]
+  var goalDiv = $('#goal-'+response.goal_id)[0]
+  var newStepDiv = $.parseHTML(response.html)[0]
   goalDiv.querySelector('.steps').appendChild(newStepDiv)
   goalDiv.querySelector('#step_description').value = ""
   goalDiv.querySelector('#step_due_by').value = ""
@@ -71,6 +72,14 @@ function appendStep(e, response){
 
 function removeStep(e, response){
   stepController.model.deleteStep(response.step_id)
-  stepDiv = $('#step-'+response.step_id)[0]
+  var stepDiv = $('#step-'+response.step_id)[0]
   stepDiv.remove()
+}
+
+function appendTextMessage(e, response){
+  var textMessageHistoryDiv = $('#text-message-history')[0]
+  var newTextDiv = $.parseHTML(response)[0]
+  $(textMessageHistoryDiv).prepend(newTextDiv)
+  document.getElementById("text_message_content").value = ""
+  $('#text_length').text("0")
 }

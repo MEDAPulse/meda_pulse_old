@@ -7,16 +7,14 @@ class TextMessagesController < ApplicationController
     message_sent = Twilio.send_message(@client.phone, content)
 
     if message_sent
-      message = TextMessage.new(text_message_params)
-      message.incoming_message = false
-      if message.save
-        #send partial back
+      text_message = TextMessage.new(text_message_params)
+      text_message.incoming_message = false
+      if text_message.save
+        render partial: 'shared/text_message', locals: {text_message: text_message}
       else
         #send error
       end
     end
-
-    redirect_to @client
 
   end
 
