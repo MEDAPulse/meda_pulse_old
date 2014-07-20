@@ -13,8 +13,9 @@ class GoalsController < ApplicationController
 
   def destroy
     @goal = Goal.find(params[:id])
+    step_ids = @goal.steps.map {|step| step.id}
     if @goal && @goal.destroy
-      render json: {goal_id: @goal.id}
+      render json: {goal_id: @goal.id, step_ids: step_ids}
     else
       #send error messages
     end

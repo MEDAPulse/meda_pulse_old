@@ -54,7 +54,7 @@ StepController.prototype = {
   },
 
   createStepsModels: function(stepJSONs) {
-    var stepObjects = stepFactory(stepJSONs)
+    var stepObjects = stepFactory.createSteps(stepJSONs)
     this.model.steps = stepObjects
     this.updateAllStepsCompleteStatusView()
   },
@@ -75,5 +75,10 @@ StepController.prototype = {
       this.view.markStepAsNotComplete(stepObj.id)
     }
   },
+
+  createStep: function(stepJSON) {
+    var step = stepFactory.createStep(JSON.parse(stepJSON))
+    this.model.addStep(step)
+  }
 
 }

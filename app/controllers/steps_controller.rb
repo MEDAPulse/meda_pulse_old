@@ -5,7 +5,7 @@ class StepsController < ApplicationController
       html = render_to_string(partial: 'shared/step', locals:{step: @step})
       goal_id = @step.goal.id
 
-      render json: {html: html, goal_id: goal_id}
+      render json: {html: html, goal_id: goal_id, step: @step.to_json}
     else
       #send error messages
     end

@@ -3,6 +3,7 @@
   <div class="pure-u-1-4">Due By: <%= step.due_by %></div>
 
   <div class="step-complete-toggle pure-u-1-4" id = "step-complete-toggle-<%= step.id %>">
+    Complete:
     <ul>
       <li class="on">
         <%= link_to "NO", "#", class: "step-complete-no", data: {step_id: step.id} %>
