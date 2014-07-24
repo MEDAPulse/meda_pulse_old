@@ -8,15 +8,17 @@
 </head>
 <body>
 
-<div class="container">
+  <div class="wrapper">
+    <div class="header">
+    </div>
+      <div class="content">
+        <% if logged_in? %>
+          <%= link_to "Logout", session_path, method: "DELETE" %><br>
+        <% end %>
 
-<% if logged_in? %>
-  <%= link_to "Logout", session_path, method: "DELETE" %><br>
-<% end %>
-
-<%= yield %>
-
-</div>
+        <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>
