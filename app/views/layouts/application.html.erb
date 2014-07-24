@@ -12,10 +12,11 @@
     <div class="header">
     </div>
       <div class="content">
-        <% if logged_in? %>
-          <%= link_to "Logout", session_path, method: "DELETE" %><br>
-        <% end %>
-
+        <nav>
+          <% if logged_in? %>
+            <%= link_to "Logout", session_path, method: "DELETE" %><br>
+          <% end %>
+        </nav>
         <%= yield %>
     </div>
   </div>
