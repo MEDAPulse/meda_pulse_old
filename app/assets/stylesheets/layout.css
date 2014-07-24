@@ -1,13 +1,32 @@
+header {
+  background-color: #7EA869;
+  height: 50px;
+  margin: 0;
+  padding: 10px 40px;
+  max-width: 100%;
+
+}
+
 .wrapper {
 }
 
-.header {
-  background-color: #7EA869;
-  height: 75px;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+.nav {
+  padding: 5px;
+}
 
+.nav li {
+  display: inline-block;
+  float: right;
+  padding: 10px 20px;
+}
+
+#dash {
+  font-size: 20px;
+  margin-top: -3px;
+}
+
+.nav a{
+  color: white;
 }
 
 #client-details {

@@ -52,29 +52,3 @@
     <% end %>
   </li>
 </ul>
-h2>Send Text</h2>
-  <div class = "pure-g">
-    <div class = "pure-u-1" id="new-text-message">
-      <div id = "text-form">
-      <%= form_for @text_message, html: {class: "pure-form"} do |f| %>
-        <%= f.hidden_field :client_id, value: @client.id %>
-        <%= f.text_area :content, placeholder: "Text Message Content" %><br>
-        <div class = "pure-u-1" id = "new-message-length-submit">
-          <div id = "message-length">
-            Message Length: <span id="text_length">0</span>
-          </div>
-          <%= f.submit "Send Text Message",class: "pure-button pure-button-primary", id: "new-text-message-submit-button" %>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="gray-box texts">
-  <h2>Text Message History</h2>
-  <% @text_messages.each do |text_message| %>
-    <%= render partial: 'shared/text_message', locals: {text_message: text_message} %>
-  <% end %>
-</div>
->>>>>>> Beginning client page styling.
