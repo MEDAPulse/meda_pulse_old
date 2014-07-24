@@ -1,0 +1,38 @@
+.wrapper {
+}
+
+.header {
+  background-color: #7EA869;
+  height: 75px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+}
+
+#client-details {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 65%;
+}
+
+#action-plans {
+  float: left;
+  width: 65%;
+}
+
+.gray-box {
+  float: right;
+  width: 25%;
+
+}
+
+.new-msg {
+  display: block;
+
+}
+
+.texts {
+  display: block;
+}
