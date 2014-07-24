@@ -1,52 +1,55 @@
-<div id="client-details">
-  <h2><%= "#{@client.first_name} #{@client.last_name}" %></h2>
-  <h3>Phone: <%= @formatted_phone_number %></h3>
-  <h3>Email: <%= @client.email %></h3>
-  <h3>Salesforce ID: <%= @client.salesforce_id %>
-</div>
+<div id="right-bar">
+  <div id="client-details">
+    <h2><%= "#{@client.first_name} #{@client.last_name}" %></h2>
+    <h3>Phone: <%= @formatted_phone_number %></h3>
+    <h3>Email: <%= @client.email %></h3>
+    <h3>Salesforce ID: <%= @client.salesforce_id %>
+  </div>
+  <script>
+    clientId = <%= params[:id] %>
+  </script>
 
-<script>
-  clientId = <%= params[:id] %>
-</script>
+  <div id="action-plans">
+    <h2>Action Plans</h2>
+    <% @client.action_plans.each do |action_plan| %>
+      <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal, new_step: @step} %>
+    <% end %>
 
-<div id="action-plans">
-  <h2>Action Plans</h2>
-  <% @client.action_plans.each do |action_plan| %>
-    <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal, new_step: @step} %>
-  <% end %>
+    <%= link_to "Add Action Plan", "#", id: "add-action-plan" %>
 
-  <%= link_to "Add Action Plan", "#", id: "add-action-plan" %>
-
-  <%= form_for @action_plan, remote: true, html: {class: 'hidden'} do |f| %>
-    <%= f.text_field :description, placeholder: 'Description' %>
-    <%= f.hidden_field :client_id, value: @client.id %>
-    <%= f.submit "Add Action Plan" %>
-  <% end %>
-</div>
-
-<div class="gray-box new-msg">
-  <h2>Send Text</h2>
-  <div class = "pure-g">
-    <div class = "pure-u-1" id="new-text-message">
-      <div id = "text-form">
-      <%= form_for @text_message, html: {class: "pure-form"} do |f| %>
-        <%= f.hidden_field :client_id, value: @client.id %>
-        <%= f.text_area :content, placeholder: "Text Message Content" %><br>
-        <div class = "pure-u-1" id = "new-message-length-submit">
-          <div id = "message-length">
-            Message Length: <span id="text_length">0</span>
-          </div>
-          <%= f.submit "Send Text Message",class: "pure-button pure-button-primary", id: "new-text-message-submit-button" %>
-        </div>
-      </div>
-      <% end %>
-    </div>
+    <%= form_for @action_plan, remote: true, html: {class: 'hidden'} do |f| %>
+      <%= f.text_field :description, placeholder: 'Description' %>
+      <%= f.hidden_field :client_id, value: @client.id %>
+      <%= f.submit "Add Action Plan" %>
+    <% end %>
   </div>
 </div>
 
-<div class="gray-box texts">
-  <h2>Text Message History</h2>
-  <% @text_messages.each do |text_message| %>
-    <%= render partial: 'shared/text_message', locals: {text_message: text_message} %>
-  <% end %>
-</div>
+<ul class="side-bar">
+  <li class="new-msg">
+    <h2>Send Text</h2>
+    <div class = "pure-g">
+      <div class = "pure-u-1" id="new-text-message">
+        <div id = "text-form">
+        <%= form_for @text_message, html: {class: "pure-form"} do |f| %>
+          <%= f.hidden_field :client_id, value: @client.id %>
+          <%= f.text_area :content, placeholder: "Text Message Content" %><br>
+          <div class = "pure-u-1" id = "new-message-length-submit">
+            <div id = "message-length">
+              Message Length: <span id="text_length">0</span>
+            </div>
+            <%= f.submit "Send Text Message",class: "pure-button pure-button-primary", id: "new-text-message-submit-button" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </li>
+
+  <li class="texts">
+    <h2>Text Message History</h2>
+    <% @text_messages.each do |text_message| %>
+      <%= render partial: 'shared/text_message', locals: {text_message: text_message} %>
+    <% end %>
+  </li>
+</ul>

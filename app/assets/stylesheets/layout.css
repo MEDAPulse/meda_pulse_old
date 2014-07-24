@@ -4,20 +4,29 @@ header {
   margin: 0;
   padding: 10px 40px;
   max-width: 100%;
-
 }
 
 .wrapper {
+  min-width: 360px;
 }
 
 .nav {
-  padding: 5px;
+  margin: 0 auto;
+  width: 960px;
 }
 
-.nav li {
+.nav ul {
+  float: right;
+}
+
+.nav ul li {
   display: inline-block;
   float: right;
-  padding: 10px 20px;
+}
+
+.nav ul li a{
+  color: white;
+  padding: 0px 20px;
 }
 
 #dash {
@@ -25,26 +34,31 @@ header {
   margin-top: -3px;
 }
 
-.nav a{
-  color: white;
-}
-
-#client-details {
+#right-bar {
   float: left;
   margin: 0;
   padding: 0;
-  width: 65%;
+  width: 60%;
+}
+
+#client-details h2 {
+  font-weight: 300;
 }
 
 #action-plans {
   float: left;
-  width: 65%;
 }
 
-.gray-box {
+ul.side-bar  {
   float: right;
-  width: 25%;
+  margin: 0;
+  padding: 20px 0px;
+  width: 35%;
 
+}
+
+.gray-box li {
+  display: block;
 }
 
 .new-msg {
