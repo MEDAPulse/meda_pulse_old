@@ -34,15 +34,19 @@ header {
   margin-top: -3px;
 }
 
-#right-bar {
+#left-bar {
   float: left;
   margin: 0;
   padding: 0;
   width: 60%;
 }
 
-#client-details h2 {
+#left-bar h2, h3 {
   font-weight: 300;
+}
+
+#left-bar h3 {
+  padding-left: 30px;
 }
 
 #action-plans {
@@ -54,13 +58,18 @@ ul.side-bar  {
   margin: 0;
   padding: 20px 0px;
   width: 35%;
-
 }
 
-.gray-box li {
-  display: block;
+ul.side-bar li {
+  background-color: #E9E9E9;
+  margin: 20px 0px;
+  padding: 2px 20px;
 }
 
+ul.side-bar li h2{
+  font-weight: 300;
+
+}
 .new-msg {
   display: block;
 

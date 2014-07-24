@@ -1,4 +1,4 @@
-<div id="right-bar">
+<div id="left-bar">
   <div id="client-details">
     <h2><%= "#{@client.first_name} #{@client.last_name}" %></h2>
     <h3>Phone: <%= @formatted_phone_number %></h3>
@@ -27,18 +27,18 @@
 
 <ul class="side-bar">
   <li class="new-msg">
-    <h2>Send Text</h2>
+    <h2>Schedule Text Message</h2>
     <div class = "pure-g">
       <div class = "pure-u-1" id="new-text-message">
         <div id = "text-form">
         <%= form_for @text_message, html: {class: "pure-form"} do |f| %>
           <%= f.hidden_field :client_id, value: @client.id %>
-          <%= f.text_area :content, placeholder: "Text Message Content" %><br>
+          <%= f.text_area :content, placeholder: "Draft text message..." %><br>
           <div class = "pure-u-1" id = "new-message-length-submit">
             <div id = "message-length">
               Message Length: <span id="text_length">0</span>
             </div>
-            <%= f.submit "Send Text Message",class: "pure-button pure-button-primary", id: "new-text-message-submit-button" %>
+            <%= f.submit "Send",class: "pure-button pure-button-primary", id: "new-text-message-submit-button" %>
           </div>
         </div>
         <% end %>
