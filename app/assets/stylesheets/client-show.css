@@ -72,14 +72,15 @@ ul.side-bar li {
 
 ul.side-bar li h2{
   font-weight: 300;
-
 }
+
 .new-msg {
   display: block;
-
 }
 
 .texts {
-  display: block;
-}
+  background-color: #E9E9E9;
 
+  display: block;
+  height: 500px;
+}
