@@ -10,12 +10,11 @@
   </script>
 
   <div id="action-plans">
-    <h2>Action Plans</h2>
+    <h2>Action Plans <%= link_to "New Plan", "#", id: "add-action-plan" %></h2>
     <% @client.action_plans.each do |action_plan| %>
       <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal, new_step: @step} %>
     <% end %>
 
-    <%= link_to "Add Action Plan", "#", id: "add-action-plan" %>
 
     <%= form_for @action_plan, remote: true, html: {class: 'hidden'} do |f| %>
       <%= f.text_field :description, placeholder: 'Description' %>
