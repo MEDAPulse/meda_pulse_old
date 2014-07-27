@@ -20,9 +20,9 @@
 #add-action-plan {
   background-color: #E9E9E9;
   border-radius: 4px;
-  margin: -5px 5px 5px 5px;
-  font-size: 13px;
-  padding: 8px;
+  margin: 5px 5px 0px 35px;
+  font-size: 16px;
+  padding: 12px;
   text-align: center;
   text-decoration: none;
 }
@@ -35,25 +35,44 @@
 .action-plan-description {
   margin: 0;
   padding-left: 30px;
+  width: 120%;
 }
-.action-plan-description li {
-  display: inline;
-  text-decoration: none;
+.action-plan-description td {
+  word-wrap: true;
 }
 
-.action-plan-description li h3 {
+.action-plan-description td h3 {
   display: inline;
   font-size: 20px;
   font-weight: 300;
-  padding: 0;
+  padding: 0px 10px 0px 30px;
+}
+
+.action-plan-description td h4 {
+  color: #7EA869;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.action-plan-description td a{
+  color: #E9E9E9;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+.action-plan-description td p {
+  line-height: .5;
+  font-size: 13px;
 }
 
 .show-goals {
-  display: block;
 }
 
 .show-goals-steps {
-  display: block;
 }
 
 
