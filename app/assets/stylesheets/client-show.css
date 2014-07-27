@@ -61,9 +61,6 @@
   padding-left: 30px;
   width: 120%;
 }
-.action-plan-list td {
-  word-wrap: true;
-}
 
 .action-plan-list td h3 {
   display: inline;
