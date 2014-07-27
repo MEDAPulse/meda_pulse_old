@@ -25,8 +25,13 @@ header {
 }
 
 .nav ul li a{
-  color: white;
+  color: #E9E9E9;
   padding: 0px 20px;
+}
+
+.nav ul li a:hover{
+  color: white;
+  text-decoration: none;
 }
 
 #dash {
@@ -34,47 +39,3 @@ header {
   margin-top: -3px;
 }
 
-#left-bar {
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 60%;
-}
-
-#left-bar h2, h3 {
-  font-weight: 300;
-}
-
-#left-bar h3 {
-  padding-left: 30px;
-}
-
-#action-plans {
-  float: left;
-}
-
-ul.side-bar  {
-  float: right;
-  margin: 0;
-  padding: 20px 0px;
-  width: 35%;
-}
-
-ul.side-bar li {
-  background-color: #E9E9E9;
-  margin: 20px 0px;
-  padding: 2px 20px;
-}
-
-ul.side-bar li h2{
-  font-weight: 300;
-
-}
-.new-msg {
-  display: block;
-
-}
-
-.texts {
-  display: block;
-}

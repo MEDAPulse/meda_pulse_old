@@ -59,10 +59,13 @@ a:hover {
 }
 
 #new-text-message-submit-button {
-  background-color: #10601E;
+  background-color: #1CA634;
   border-radius: 4px;
-  margin: 0;
   float: right;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 5px;
+  padding: 12px 15px;
 }
 
 #text-form {
