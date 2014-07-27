@@ -3,7 +3,7 @@
     <p>Hello, <%= @user.first_name %>!</p>
 
     <div id="add-new-client">
-      <%= link_to 'Add client','#', id: 'show-client-form' %>
+      <%= button_to 'Add client','#', id: 'show-client-form' %>
     </div>
 
     <%= form_for @client, html:{class: "hidden add-client"} do |f| %>
