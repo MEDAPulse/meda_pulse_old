@@ -15,12 +15,13 @@
 
 #action-plans {
   float: left;
+  margin: 0 auto;
 }
 
 #add-action-plan {
   background-color: #E9E9E9;
   border-radius: 4px;
-  margin: 5px 5px 0px 35px;
+  margin: 5px 5px 0px 55px;
   font-size: 16px;
   padding: 12px;
   text-align: center;
@@ -32,29 +33,52 @@
   color: white;
 }
 
-.action-plan-description {
+.new-action-plan-form {
+  background-color: #E9E9E9;
+  float: left;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 20px 50px 20px 50px;
+  width: 91%;
+}
+
+.form-wrapper {
+  margin: 0 auto;
+}
+
+.new-action-plan-field {
+  border-radius: 2px;
+  font-weight: 300;
+  height: 38px;
+  margin: 6px auto;
+  padding: 0px 15px;
+  width: 50%;
+}
+
+.action-plan-list {
   margin: 0;
   padding-left: 30px;
   width: 120%;
 }
-.action-plan-description td {
+.action-plan-list td {
   word-wrap: true;
 }
 
-.action-plan-description td h3 {
+.action-plan-list td h3 {
   display: inline;
   font-size: 20px;
   font-weight: 300;
   padding: 0px 10px 0px 30px;
 }
 
-.action-plan-description td h4 {
+.action-plan-list td h4 {
   color: #7EA869;
   font-size: 20px;
   font-weight: 300;
 }
 
-.action-plan-description td a{
+.action-plan-list td a{
   color: #E9E9E9;
   display: inline-block;
   font-size: 15px;
@@ -64,7 +88,7 @@
   text-decoration: none;
 }
 
-.action-plan-description td p {
+.action-plan-list td p {
   line-height: .5;
   font-size: 13px;
 }

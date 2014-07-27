@@ -11,16 +11,20 @@
 
   <div id="action-plans">
     <h2>Action Plans <%= link_to "New Plan", "#", id: "add-action-plan" %></h2>
+
+
+    <%= form_for @action_plan, remote: true, html: {class: 'new-action-plan-form hidden'} do |f| %>
+      <div class="form-wrapper">
+        <%= f.text_field :description, class: 'new-action-plan-field', placeholder: 'Description' %>
+        <%= f.hidden_field :client_id, value: @client.id %>
+        <%= f.submit "Add Action Plan", class: 'pure-button pure-button-primary', id: 'submit' %>
+      </div>
+    <% end %>
+
     <% @client.action_plans.each do |action_plan| %>
       <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal, new_step: @step} %>
     <% end %>
 
-
-    <%= form_for @action_plan, remote: true, html: {class: 'hidden'} do |f| %>
-      <%= f.text_field :description, placeholder: 'Description' %>
-      <%= f.hidden_field :client_id, value: @client.id %>
-      <%= f.submit "Add Action Plan" %>
-    <% end %>
   </div>
 </div>
 

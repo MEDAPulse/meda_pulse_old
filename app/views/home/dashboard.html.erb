@@ -3,7 +3,7 @@
     <p>Hello, <%= @user.first_name %>!</p>
 
     <div id="add-new-client">
-      <%= button_to 'Add client','#', id: 'show-client-form' %>
+      <%= button_to 'Add client','#', class: 'pure-button pure-button-primary', id: 'show-client-form' %>
     </div>
 
     <%= form_for @client, html:{class: "hidden add-client"} do |f| %>
@@ -12,7 +12,7 @@
       <%= f.text_field :salesforce_id, placeholder: 'SalesForce ID' %>
       <%= f.text_field :phone, placeholder: 'Phone Number' %>
       <%= f.email_field :email, placeholder: 'Email' %>
-      <%= f.submit class:'submit' %>
+      <%= f.submit class: 'pure-button pure-button-primary', id:'submit' %>
     <% end %>
 
   </div>
