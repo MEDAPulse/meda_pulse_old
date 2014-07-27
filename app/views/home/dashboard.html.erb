@@ -1,22 +1,45 @@
-<div id="add-new-client">
-  <%= link_to 'Add New Client','#', id: 'show-client-form' %>
-  <%= form_for @client, html:{class: "hidden"} do |f| %>
-    <%= f.text_field :first_name, placeholder: 'First Name'%>
-    <%= f.text_field :last_name, placeholder: 'Last Name' %>
-    <%= f.text_field :salesforce_id, placeholder: 'SalesForce ID' %>
-    <%= f.text_field :phone, placeholder: 'Phone Number' %>
-    <%= f.email_field :email, placeholder: 'Email' %>
-    <%= f.submit %>
-  <% end %>
+<div id="dashboard">
+  <div id="head-client">
+    <p>Hello, <%= @user.first_name %>!</p>
+
+    <div id="add-new-client">
+      <%= link_to 'Add client','#', id: 'show-client-form' %>
+      <%= form_for @client, html:{class: "hidden"} do |f| %>
+        <%= f.text_field :first_name, placeholder: 'First Name'%>
+        <%= f.text_field :last_name, placeholder: 'Last Name' %>
+        <%= f.text_field :salesforce_id, placeholder: 'SalesForce ID' %>
+        <%= f.text_field :phone, placeholder: 'Phone Number' %>
+        <%= f.email_field :email, placeholder: 'Email' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id = "new-client-errors">
+    <%= flash[:errors] %>
+  </div>
+
+  <div class="client-list">
+    <table>
+      <tr>
+        <th>Client Name</th>
+        <th>Client ID</th>
+        <th>Status</th>
+      </tr>
+      <% @clients.each do |client| %>
+        <tr><%= render partial: 'shared/client_list_item', locals: {client: client} %></tr>
+      <% end %>
+    </table>
+  </div>
 </div>
 
-<div id = "new-client-errors">
-  <%= flash[:errors] %>
-</div>
-
-<div id="client-list">
-<h2>Clients List</h2> <!-- for testing purposes, remove pending final design of dashboard -->
-<% @clients.each do |client| %>
-  <%= render partial: 'shared/client_list_item', locals: {client: client} %>
-<% end %>
-</div>
+<ul class="side-bar">
+  <li class="texts">
+    <h2>Text Message History</h2>
+    <% @user.clients.each do |client| %>
+      <% client.text_messages.each do |text_message| %>
+        <%= render partial: 'shared/text_message', locals: {text_message: text_message} %>
+      <% end %>
+    <% end %>
+  </li>
+</ul>
