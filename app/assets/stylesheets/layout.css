@@ -64,7 +64,7 @@ h1 {
   margin: 0;
 }
 
-#add-new-client {
+#show-client-form{
   background-color: #1CA634;
   border-radius: 4px;
   display: inline-block;
@@ -72,9 +72,6 @@ h1 {
   padding: 4px 0px 8px 0px;
   text-align: center;
   width: 114px;
-}
-
-#add-new-client a {
   color: white;
   font-size: 19px;
   font-weight: 100;
