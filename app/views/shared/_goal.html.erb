@@ -5,7 +5,7 @@
 
   <div class="goal-steps hidden">
     <div class="steps">
-      <% goal.steps.each do |step| %>
+      <% goal.steps.order(:due_by).each do |step| %>
         <%= render partial: "shared/step", locals: {step: step} %>
       <% end %>
     </div>

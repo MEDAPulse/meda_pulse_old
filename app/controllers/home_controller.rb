@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     if logged_in?
       redirect_to action: "dashboard"
     end
+    @user = User.new
   end
 
   def dashboard

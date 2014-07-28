@@ -15,7 +15,6 @@
       <%= render partial: 'shared/action_plan', locals: {action_plan: action_plan, new_goal: @goal, new_step: @step} %>
     <% end %>
 
-
     <%= form_for @action_plan, remote: true, html: {class: 'hidden'} do |f| %>
       <%= f.text_field :description, placeholder: 'Description' %>
       <%= f.hidden_field :client_id, value: @client.id %>
