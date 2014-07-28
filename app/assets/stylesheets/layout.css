@@ -18,7 +18,7 @@ h1 {
 
 .nav {
   margin: 0 auto;
-  width: 960px;
+  width: 1220px;
 }
 
 .nav ul {
@@ -64,7 +64,7 @@ h1 {
   margin: 0;
 }
 
-#add-new-client {
+#show-client-form{
   background-color: #1CA634;
   border-radius: 4px;
   display: inline-block;
@@ -72,13 +72,40 @@ h1 {
   padding: 4px 0px 8px 0px;
   text-align: center;
   width: 114px;
-}
-
-#add-new-client a {
   color: white;
   font-size: 19px;
   font-weight: 100;
   text-decoration: none;
+}
+
+#new_client {
+  background-color: #E9E9E9;
+  float: left;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 20px 30px 20px 50px;
+  width: 91%
+}
+
+#client_first_name, #client_last_name, #client_salesforce_id, #client_phone, #client_email {
+  border-radius: 2px;
+  font-weight: 300;
+  height: 28px;
+  margin: 6px;
+}
+
+#submit {
+  background-color: #1CA634;
+  border-radius: 2px;
+  color: white;
+  outline: none;
+  -moz-box-shadow: 0 0 3px #333;
+  font-weight: 300;
+  height: 45px;
+  margin-left: 5px;
+  padding: 10px;
+  width: 25%;
 }
 
 .client-list {

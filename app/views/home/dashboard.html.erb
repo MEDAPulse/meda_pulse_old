@@ -3,16 +3,18 @@
     <p>Hello, <%= @user.first_name %>!</p>
 
     <div id="add-new-client">
-      <%= link_to 'Add client','#', id: 'show-client-form' %>
-      <%= form_for @client, html:{class: "hidden"} do |f| %>
-        <%= f.text_field :first_name, placeholder: 'First Name'%>
-        <%= f.text_field :last_name, placeholder: 'Last Name' %>
-        <%= f.text_field :salesforce_id, placeholder: 'SalesForce ID' %>
-        <%= f.text_field :phone, placeholder: 'Phone Number' %>
-        <%= f.email_field :email, placeholder: 'Email' %>
-        <%= f.submit %>
-      <% end %>
+      <%= button_to 'Add client','#', class: 'pure-button pure-button-primary', id: 'show-client-form' %>
     </div>
+
+    <%= form_for @client, html:{class: "hidden add-client"} do |f| %>
+      <%= f.text_field :first_name, placeholder: 'First Name'%>
+      <%= f.text_field :last_name, placeholder: 'Last Name' %>
+      <%= f.text_field :salesforce_id, placeholder: 'SalesForce ID' %>
+      <%= f.text_field :phone, placeholder: 'Phone Number' %>
+      <%= f.email_field :email, placeholder: 'Email' %>
+      <%= f.submit class: 'pure-button pure-button-primary', id:'submit' %>
+    <% end %>
+
   </div>
 
   <div id = "new-client-errors">
