@@ -1,0 +1,86 @@
+#left-bar {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+#left-bar h2, h3 {
+  font-weight: 300;
+}
+
+#client-details h3 {
+  padding-left: 30px;
+}
+
+#action-plans {
+  float: left;
+}
+
+#add-action-plan {
+  background-color: #E9E9E9;
+  border-radius: 4px;
+  margin: -5px 5px 5px 5px;
+  font-size: 13px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#add-action-plan:hover {
+  background-color: #929292;
+  color: white;
+}
+
+.action-plan-description {
+  margin: 0;
+  padding-left: 30px;
+}
+.action-plan-description li {
+  display: inline;
+  text-decoration: none;
+}
+
+.action-plan-description li h3 {
+  display: inline;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 0;
+}
+
+.show-goals {
+  display: block;
+}
+
+.show-goals-steps {
+  display: block;
+}
+
+
+ul.side-bar  {
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 35%;
+}
+
+ul.side-bar li {
+  background-color: #E9E9E9;
+  margin: 20px 0px;
+  padding: 2px 20px;
+}
+
+ul.side-bar li h2{
+  font-weight: 300;
+}
+
+.new-msg {
+  display: block;
+}
+
+.texts {
+  background-color: #E9E9E9;
+
+  display: block;
+  height: 500px;
+}

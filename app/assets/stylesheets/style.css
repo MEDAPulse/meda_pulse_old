@@ -23,9 +23,10 @@ a:hover {
   color: blue;
 }
 
-.container {
-  max-width: 960px;
+.content {
+  max-width: 1120px;
   margin: auto;
+  bottom: 0;
 }
 
 .action-plan-goals {
@@ -58,8 +59,13 @@ a:hover {
 }
 
 #new-text-message-submit-button {
-  margin: 0;
+  background-color: #1CA634;
+  border-radius: 4px;
   float: right;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 5px;
+  padding: 12px 15px;
 }
 
 #text-form {

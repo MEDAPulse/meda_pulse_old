@@ -8,15 +8,21 @@
 </head>
 <body>
 
-<div class="container">
-
-<% if logged_in? %>
-  <%= link_to "Logout", session_path, method: "DELETE" %><br>
-<% end %>
-
-<%= yield %>
-
-</div>
+  <div class="wrapper">
+    <header>
+      <div class="nav">
+        <ul>
+          <% if logged_in? %>
+            <li><%= link_to "Logout", session_path, method: "DELETE" %></li>
+            <li id="dash"><%= link_to "Dashboard", dashboard_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

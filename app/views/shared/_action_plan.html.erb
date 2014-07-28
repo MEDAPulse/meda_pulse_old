@@ -1,7 +1,10 @@
 <div class="action-plan" id="action-plan-<%= action_plan.id %>">
-  <div class="action-plan-description">
-    <%= action_plan.description %>-<%= link_to "Show Goals", "#", class:"show-goals", data: {action_plan_id: action_plan.id }%> - <%= link_to "Show All", "#", class:"show-goals-steps", data: {action_plan_id: action_plan.id }%> - <%= link_to "Delete", action_plan, remote: true, method: :delete, class: "delete-action-plan" %>
-  </div>
+  <ul class="action-plan-description">
+    <li><h3><%= action_plan.description %></h3></li>
+    <li><%= link_to "Show Goals", "#", class:"show-goals", data: {action_plan_id: action_plan.id }%></li>
+    <li><%= link_to "Show All", "#", class:"show-goals-steps", data: {action_plan_id: action_plan.id }%></li>
+    <li><%= link_to "Delete", action_plan, remote: true, method: :delete, class: "delete-action-plan" %></li>
+  </ul>
 
   <div class="action-plan-goals hidden">
     <div class="goals">
