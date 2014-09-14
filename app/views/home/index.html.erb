@@ -62,7 +62,6 @@
 
         <div class="container">
                 <div class ="userauth">
-                <form class="form-inline">
                         <div id="login">
                           <%= form_tag session_path do %>
                             <%= email_field_tag :email, nil, placeholder: "Email" %>
@@ -70,10 +69,8 @@
                             <%= submit_tag "Login", :class => 'btn-primary' %>
                           <% end %>
                         </div>
-                        </form>
                         </br>
 
-                        <form class="form-inline">
                         <div id="sign-up">
                           <%= form_for @user do |f| %>
                             <%= f.text_field :first_name, placeholder: "First Name" %>
@@ -83,7 +80,6 @@
                             <%= f.submit "Sign Up", :class => 'btn-primary' %>
                           <% end %>
                         </div>
-                        </form>
 
                         <% if flash[:error] %>
                           <div id="errors">
