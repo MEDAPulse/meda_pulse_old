@@ -11,6 +11,16 @@ class ClientsController < ApplicationController
   end
 
   def destroy
+    @client = Client.find(params[:id])
+    first_name = @client.first_name
+
+    if @client.destroy
+      flash[:notice] = "\"#{first_name}\" was deleted successfully."
+      redirect_to dashboard_path
+    else
+      flash[:error] = "There was an error deleting the topic."
+      render :show
+    end
   end
 
   def show
