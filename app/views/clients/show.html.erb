@@ -9,9 +9,11 @@
     clientId = <%= params[:id] %>
   </script>
 
+
   <div id="action-plans">
     <h2>Action Plans <%= link_to "New Plan", "#", id: "add-action-plan" %></h2>
 
+    <%= link_to "Delete Client", @client, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this client?' } %> 
 
     <%= form_for @action_plan, remote: true, html: {class: 'new-action-plan-form hidden'} do |f| %>
       <div class="form-wrapper">
