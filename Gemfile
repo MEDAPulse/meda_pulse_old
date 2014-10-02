@@ -36,3 +36,4 @@ gem 'twilio-ruby'
 
 gem 'bootstrap-sass'
 
+gem "font-awesome-rails"
