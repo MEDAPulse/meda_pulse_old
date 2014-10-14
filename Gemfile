@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '4.2.0.beta2'
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '>= 5.0.0.beta1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -35,4 +35,8 @@ gem 'faker', :groups => [:development, :test]
 gem 'twilio-ruby'
 
 gem 'bootstrap-sass'
+
+# upgrading to Rails 4.2
+
+gem 'responders', '~> 2.0'
 
