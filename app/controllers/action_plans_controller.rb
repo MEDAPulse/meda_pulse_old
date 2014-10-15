@@ -15,7 +15,7 @@ class ActionPlansController < ApplicationController
     if @action_plan && @action_plan.destroy
       render json: {action_plan_id: @action_plan.id, step_ids: step_ids}
     else
-      #send error messages
+      flash[:error] = "There was an error deleting the action plan."
     end
 
   end
