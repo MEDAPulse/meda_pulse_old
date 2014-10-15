@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
       flash[:notice] = "\"#{first_name}\" was deleted successfully."
       redirect_to dashboard_path
     else
-      flash[:error] = "There was an error deleting the topic."
+      flash[:error] = "There was an error deleting the client."
       render :show
     end
   end
